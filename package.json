@@ -1,5 +1,6 @@
 {
   "name": "dio",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,5 +45,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.5.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/styled-components": "^5.1.36",
+    "typescript": "^6.0.2"
   }
 }

@@ -8,6 +8,7 @@ import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { Column, Container, LoginText, Row, SignUpText, SubTitleSignUp, Title, TitleSignUp, Wrapper } from "./styles";
+import { IFormData } from "./type";
 
 const schema = yup.object({
     name: yup.string().required("Campo obrigatório"),
@@ -24,13 +25,13 @@ const SignUp = () => {
         mode: 'onChange',
     });
 
-    const handleRegister = async (formData) => {
+    const handleRegister = async (formData: IFormData) => {
         try{
 
             const { data: users } = await api.get("users");
 
             const userExists = users.find(
-                (users) => users.email === formData.email
+                (users: IFormData) => users.email === formData.email
             );
 
             if (userExists) {
