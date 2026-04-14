@@ -2,21 +2,24 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo-dio.png'
 import { Button } from '../Button'
-import { IHeader } from './types'
 
 import {
     BuscarInputContainer,
     Container,
     Input,
     Menu,
+    MenuExit,
     MenuImg,
     MenuRight,
     Row,
     UserPicture,
     Wrapper
 } from './styles'
+import { useAuth } from '../../hooks/useAuth'
 
-const Header = ({autenticado}: IHeader) => {
+const Header = () => {
+
+    const { user, handleSignOut } = useAuth();
 
     const navigate = useNavigate();
 
@@ -32,12 +35,16 @@ const Header = ({autenticado}: IHeader) => {
         navigate('/cadastro')
     }
 
+    const handleClickFeed = () => {
+        navigate('/feed')
+    }
+
   return (
     <Wrapper>
         <Container>
             <Row>
                 <MenuImg src={logo} alt="Logo da dio" onClick={handleClickHome} />
-                {autenticado ? (
+                {user.id ? (
                     <>                
                         <BuscarInputContainer>
                             <Input placeholder='Buscar...' />
@@ -48,8 +55,11 @@ const Header = ({autenticado}: IHeader) => {
                 ) : null}
             </Row>
             <Row>
-                {autenticado ? (
-                    <UserPicture src="https://avatars.githubusercontent.com/u/14025583?s=400&u=672d7306f90cef64fcff65d1eb107d4988af2d29&v=4" />
+                {user.id ? (
+                    <>
+                        <UserPicture onClick={handleClickFeed} src="https://avatars.githubusercontent.com/u/14025583?s=400&u=672d7306f90cef64fcff65d1eb107d4988af2d29&v=4" />
+                        <MenuExit onClick={handleSignOut}>Sair</MenuExit>
+                    </>
                 ) : (
                     <>                
                         <MenuRight onClick={handleClickHome}>Home</MenuRight>

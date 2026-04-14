@@ -4,20 +4,19 @@
       "id": "1",
       "name": "Victor",
       "email": "victor@email.com",
-      "senha": "victor"
+      "password": "victor"
     },
     {
       "id": "2",
       "name": "Wesley",
       "email": "wesley@email.com",
-      "senha": "wesley"
+      "password": "wesley"
     },
     {
+      "id": "3",
       "name": "Ian",
       "email": "ian@email.com",
-      "senha": "ian123",
-      "id": "iJY1zm7miFU"
+      "password": "ian123"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

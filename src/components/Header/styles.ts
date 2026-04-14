@@ -50,8 +50,6 @@ export const MenuImg = styled.img`
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.2);
-        transition: all 0.2s ease-in-out;
     }
 `
 
@@ -63,6 +61,7 @@ export const Menu = styled.a`
     color: #FFFFFF;
     margin-right: 12px;
     text-decoration: none;
+    cursor: default;
 `
 
 export const MenuRight = styled.a`
@@ -80,11 +79,30 @@ export const MenuRight = styled.a`
     }
 `
 
+export const MenuExit = styled.a`
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin-left: 12px;
+    text-decoration: none;
+
+    &:hover {
+        color: #FFFFFF70;
+        cursor: pointer;
+    }
+`
+
 export const UserPicture = styled.img`
     width: 32px;
     height: 32px;
     border-radius: 22px;
     border: 2px solid #FFFFFF;
+
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 export const Input = styled.input`
